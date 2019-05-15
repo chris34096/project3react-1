@@ -1,29 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router} from "react-router-dom";
-import axios from 'axios'
-import {Provider} from 'react-redux';
-import store from './store/store'
-import setAuthToken from './utils/setHeaders'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import { BrowserRouter as Router } from "react-router-dom";
+import axios from "axios";
+import { Provider } from "react-redux";
+import store from "./store/store";
+import setAuthToken from "./utils/setHeaders";
 
-
-axios.defaults.baseURL = "https://comentoring.herokuapp.com/"
-axios.defaults.headers.post['Content-Type'] = 'application/json'
+axios.defaults.baseURL = "https://comentoring.herokuapp.com/";
+axios.defaults.headers.post["Content-Type"] = "application/json";
 setAuthToken(localStorage.jwtToken);
 
-
-
-
 ReactDOM.render(
-  <Provider store ={store}>
-  <Router>
-    <App/>
-  </Router>
-  </Provider>
-  , document.getElementById('root'));
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
